@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Par ou Ímpar</title>
+  <title>Situação do Aluno</title>
 </head>
 <body>
-  <h3>Par ou Ímpar</h3>
-
-  <label>Escolha (par ou impar):</label>
-  <input id="escolha" type="text"><br><br>
-
-  <label>Digite um número (1 a 9):</label>
-  <input id="numero" type="number"><br><br>
-
-  <button onclick="jogar()">Jogar</button>
-
+  <h3>Digite a nota do aluno:</h3>
+  <input id="nota" type="number" />
+  <button onclick="verificar()">Verificar</button>
   <p id="resultado"></p>
 
   <script>
-    function jogar() {
-      const escolha = document.getElementById('escolha').value.toLowerCase();
-      const numeroUsuario = parseInt(document.getElementById('numero').value);
-      const numeroComputador = Math.floor(Math.random() * 9) + 1;
-      const soma = numeroUsuario + numeroComputador;
-      const par = soma % 2 === 0;
+    function verificar() {
+      const nota = parseFloat(document.getElementById('nota').value);
+      let resultado = '';
 
-      let venceu = (escolha === 'par' && par) || (escolha === 'impar' && !par);
+      if (nota === 10) {
+        resultado = 'Parabéns! Nota máxima! Você foi aprovado com excelência!';
+      } else if (nota >= 7) {
+        resultado = 'Aprovado!';
+      } else if (nota >= 4) {
+        resultado = 'Recuperação.';
+      } else if (nota >= 0) {
+        resultado = 'Reprovado.';
+      } else {
+        resultado = 'Nota inválida.';
+      }
 
-      document.getElementById('resultado').textContent =
-        `Você jogou ${numeroUsuario}, o computador ${numeroComputador}. Soma = ${soma} (${par ? 'Par' : 'Ímpar'}). ` +
-        (venceu ? 'Você venceu!' : 'Você perdeu.');
+      document.getElementById('resultado').textContent = resultado;
     }
   </script>
 </body>
