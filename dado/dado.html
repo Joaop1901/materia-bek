@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Dados</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="girarDados()">Girar Dados</button>
+
+    <div class="resultado" id="resultado">
+        <p>LADO 6: <span id="d6"></span></p>
+        <p>LADO 8: <span id="d8"></span></p>
+        <p>LADO 20: <span id="d20"></span></p>
+    </div>
+
+    <script>
+        function girarDados() {
+            function rolarDado(lados) {
+                return Math.floor(Math.random() * lados) + 1;
+            }
+
+            const resultadoD6 = rolarDado(6);
+            const resultadoD8 = rolarDado(8);
+            const resultadoD20 = rolarDado(20);
+
+            document.getElementById('d6').textContent = resultadoD6;
+            document.getElementById('d8').textContent = resultadoD8;
+            document.getElementById('d20').textContent = resultadoD20;
+        }
+    </script>
+
+</body>
+</html>
