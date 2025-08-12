@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="playerScreen">
+    <h1>Jogo da Memória</h1>
+    <input type="text" id="playerName" placeholder="Digite seu nome">
+    <button id="startBtn">Começar</button>
+  </div>
+
+  <div id="difficultyScreen" style="display:none;">
+    <h2>Escolha a dificuldade</h2>
+    <button onclick="setDifficulty(4)">Fácil (4x4)</button>
+    <button onclick="setDifficulty(6)">Médio (6x6)</button>
+    <button onclick="setDifficulty(8)">Difícil (8x8)</button>
+  </div>
+
+  <div id="gameScreen" style="display:none;">
+    <h2 id="welcome"></h2>
+    <p id="score">Pontuação: 0</p>
+    <div id="gameBoard"></div>
+    <p id="message"></p>
+  </div>
+
+  <div id="victoryScreen" style="display:none;">
+    <h1>🎉 Você venceu!</h1>
+    <p id="finalScore"></p>
+    <h3>🏆 TOP 5 Pontuações</h3>
+    <ol id="scoreList"></ol>
+    <button onclick="location.reload()">Jogar Novamente</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
