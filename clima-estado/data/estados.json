@@ -1,0 +1,17 @@
+[
+  {
+    "cidade": "São Paulo",
+    "populacao": 12300000,
+    "regiao": "Sudeste"
+  },
+  {
+    "cidade": "Curitiba",
+    "populacao": 1900000,
+    "regiao": "Sul"
+  },
+  {
+    "cidade": "Fortaleza",
+    "populacao": 2680000,
+    "regiao": "Nordeste"
+  }
+]
