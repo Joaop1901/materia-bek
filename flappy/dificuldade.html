@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Selecionar Dificuldade</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: skyblue;
+      padding-top: 50px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Escolha a Dificuldade</h1>
+  <button onclick="setDifficulty(2, 0.4)">Fácil</button>
+  <button onclick="setDifficulty(3, 0.5)">Normal</button>
+  <button onclick="setDifficulty(4, 0.6)">Difícil</button>
+
+  <script>
+    function setDifficulty(speed, grav) {
+      localStorage.setItem('move_speed', speed);
+      localStorage.setItem('gravity', grav);
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
