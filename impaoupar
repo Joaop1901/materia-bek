@@ -3,7 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>Jogo Par ou Ímpar</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+input, select{
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#45a049;
+}
+
+#resultado{
+margin-top:20px;
+font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -12,13 +56,16 @@
 
 <h1>Jogo Par ou Ímpar 🎲</h1>
 
-<label>Escolha:</label>
 <select id="escolha">
 <option value="par">Par</option>
 <option value="impar">Ímpar</option>
 </select>
 
-<input type="number" id="numero" placeholder="Digite um número (1-9)" min="1" max="9">
+<br>
+
+<input type="number" id="numero" placeholder="Número (1-9)" min="1" max="9">
+
+<br>
 
 <button onclick="jogar()">Jogar</button>
 
@@ -26,7 +73,48 @@
 
 </div>
 
-<script src="main.js"></script>
+<script>
+
+function jogar(){
+
+let escolha = document.getElementById("escolha").value
+let numeroUsuario = Number(document.getElementById("numero").value)
+
+let numeroComputador = Math.floor(Math.random() * 9) + 1
+
+let soma = numeroUsuario + numeroComputador
+
+let tipo
+
+if(soma % 2 === 0){
+tipo = "par"
+}else{
+tipo = "impar"
+}
+
+let resultado = document.getElementById("resultado")
+
+if(tipo === escolha){
+
+resultado.innerHTML =
+"Você jogou: " + numeroUsuario +
+"<br>Computador jogou: " + numeroComputador +
+"<br>Soma: " + soma +
+"<br>🎉 Você venceu!"
+
+}else{
+
+resultado.innerHTML =
+"Você jogou: " + numeroUsuario +
+"<br>Computador jogou: " + numeroComputador +
+"<br>Soma: " + soma +
+"<br>😢 Você perdeu!"
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
